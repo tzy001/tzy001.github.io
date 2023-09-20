@@ -214,6 +214,108 @@
             
 
   
+    <article id="post-redis、nginx、minio开机自启" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/09/20/redis%E3%80%81nginx%E3%80%81minio%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF/" target="_blank">redis、nginx、minio开机自启</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/09/20/redis%E3%80%81nginx%E3%80%81minio%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF/" class="archive-article-date">
+        <time datetime="2023-09-20T03:37:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-20</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="Redis开机自启"><a href="#Redis开机自启" class="headerlink" title="Redis开机自启"></a>Redis开机自启</h1><p>[Unit]<br>Description&#x3D;redis-server<br>After&#x3D;network.target</p>
+<p>[Service]<br>Type&#x3D;forking</p>
+<p>ExecStart&#x3D;&#x2F;usr&#x2F;local&#x2F;redis&#x2F;redis-7.2.0&#x2F;bin&#x2F;redis-server &#x2F;usr&#x2F;local&#x2F;redis&#x2F;redis-7.2.0&#x2F;bin&#x2F;redis.conf<br>PrivateTmp&#x3D;true</p>
+<p>[Install]<br>WantedBy&#x3D;multi-user.target</p>
+<h1 id="Nginx开机自启"><a href="#Nginx开机自启" class="headerlink" title="Nginx开机自启"></a>Nginx开机自启</h1><p>[Unit]<br>Description&#x3D;nginx<br>After&#x3D;network.target</p>
+<p>[Service]<br>Type&#x3D;forking<br>TimeoutSec&#x3D;0<br>User&#x3D;root<br>Group&#x3D;root<br>cription&#x3D;nacos<br>After&#x3D;network.target</p>
+<p>[Service]<br>Type&#x3D;forking<br>TimeoutSec&#x3D;0<br>User&#x3D;root<br>Group&#x3D;root</p>
+<p>ExecStart&#x3D;&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin&#x2F;nginx<br>ExecReload&#x3D;&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin&#x2F;nginx -s reload<br>ExecStop&#x3D;&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin&#x2F;nginx -s quit</p>
+<p>Restart&#x3D;on-failure<br>PrivateTmp&#x3D;true</p>
+<p>[Install]<br>WantedBy&#x3D;multi-user.target</p>
+<h1 id="Minio开机自启"><a href="#Minio开机自启" class="headerlink" title="Minio开机自启"></a>Minio开机自启</h1><p>[Unit]<br>Description&#x3D;Minio Service</p>
+<p>[Service]<br>Environment&#x3D;”MINIO_ROOT_USER&#x3D;minio”<br>Environment&#x3D;”MINIO_ROOT_PASSWORD&#x3D;minio”<br>ExecStart&#x3D;&#x2F;usr&#x2F;local&#x2F;minio&#x2F;minio server –address ‘0.0.0.0:9000’ –console-address ‘0.0.0.0:9002’ &#x2F;usr&#x2F;local&#x2F;minio&#x2F;data<br>ExecReload&#x3D;&#x2F;bin&#x2F;kill -s HUP $MAINPID<br>ExecStop&#x3D;&#x2F;bin&#x2F;kill -s QUIT $MAINPID<br>StandardOutput&#x3D;&#x2F;usr&#x2F;local&#x2F;minio&#x2F;minio.log<br>PrivateTmp&#x3D;true</p>
+<p>[Install]<br>WantedBy&#x3D;multi-user.target</p>
+<h1 id="重新加载服务的配置文件"><a href="#重新加载服务的配置文件" class="headerlink" title="重新加载服务的配置文件"></a>重新加载服务的配置文件</h1><p>systemctl daemon-reload</p>
+<h1 id="设置开机启动"><a href="#设置开机启动" class="headerlink" title="设置开机启动"></a>设置开机启动</h1><p>systemctl enable nginx.service</p>
+<h1 id="启动nginx服务"><a href="#启动nginx服务" class="headerlink" title="启动nginx服务"></a>启动nginx服务</h1><p>systemctl start nginx</p>
+<h1 id="查看服务状态"><a href="#查看服务状态" class="headerlink" title="查看服务状态"></a>查看服务状态</h1><p>systemctl status nginx</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">tzy001</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/09/20/redis%E3%80%81nginx%E3%80%81minio%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ElasticSearch检索" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

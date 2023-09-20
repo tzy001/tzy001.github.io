@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>ElasticSearch检索 | Hexo</title>
+  <title>redis、nginx、minio开机自启 | Hexo</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="关闭防火墙：systemctl stop firewalld.service 永久关闭防火墙：systemctl disable firewalld.service 查看端口进程号：netstat -tunlp|grep 5601 elasticsearch学习：https:&#x2F;&#x2F;www.cnblogs.com&#x2F;qdhxhz&#x2F;category&#x2F;1284274.html https:&#x2F;&#x2F;www.ela">
+  <meta name="description" content="Redis开机自启[Unit]Description&#x3D;redis-serverAfter&#x3D;network.target [Service]Type&#x3D;forking ExecStart&#x3D;&#x2F;usr&#x2F;local&#x2F;redis&#x2F;redis-7.2.0&#x2F;bin&#x2F;redis-server &#x2F;usr&amp;#x">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ElasticSearch检索">
-<meta property="og:url" content="http://example.com/2023/09/20/ElasticSearch%E6%A3%80%E7%B4%A2/index.html">
+<meta property="og:title" content="redis、nginx、minio开机自启">
+<meta property="og:url" content="http://example.com/2023/09/20/redis%E3%80%81nginx%E3%80%81minio%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="关闭防火墙：systemctl stop firewalld.service 永久关闭防火墙：systemctl disable firewalld.service 查看端口进程号：netstat -tunlp|grep 5601 elasticsearch学习：https:&#x2F;&#x2F;www.cnblogs.com&#x2F;qdhxhz&#x2F;category&#x2F;1284274.html https:&#x2F;&#x2F;www.ela">
+<meta property="og:description" content="Redis开机自启[Unit]Description&#x3D;redis-serverAfter&#x3D;network.target [Service]Type&#x3D;forking ExecStart&#x3D;&#x2F;usr&#x2F;local&#x2F;redis&#x2F;redis-7.2.0&#x2F;bin&#x2F;redis-server &#x2F;usr&amp;#x">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-09-20T03:20:38.000Z">
-<meta property="article:modified_time" content="2023-09-20T03:23:27.218Z">
+<meta property="article:published_time" content="2023-09-20T03:37:09.000Z">
+<meta property="article:modified_time" content="2023-09-20T03:43:06.972Z">
 <meta property="article:author" content="Tzy Blog">
 <meta property="article:tag" content="tzy001">
 <meta name="twitter:card" content="summary">
@@ -212,14 +212,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ElasticSearch检索" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-redis、nginx、minio开机自启" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      ElasticSearch检索
+      redis、nginx、minio开机自启
     </h1>
   
 
@@ -231,8 +231,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2023/09/20/ElasticSearch%E6%A3%80%E7%B4%A2/" class="archive-article-date">
-        <time datetime="2023-09-20T03:20:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-20</time>
+<a href="/2023/09/20/redis%E3%80%81nginx%E3%80%81minio%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF/" class="archive-article-date">
+        <time datetime="2023-09-20T03:37:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-20</time>
 </a>
 
   
@@ -245,7 +245,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">252字</span>
+      <span class="post-count">273字</span>
     </span>
   </span>
 
@@ -265,29 +265,23 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="关闭防火墙："><a href="#关闭防火墙：" class="headerlink" title="关闭防火墙："></a>关闭防火墙：</h1><p>systemctl stop firewalld.service</p>
-<h1 id="永久关闭防火墙："><a href="#永久关闭防火墙：" class="headerlink" title="永久关闭防火墙："></a>永久关闭防火墙：</h1><p>systemctl disable firewalld.service</p>
-<h1 id="查看端口进程号："><a href="#查看端口进程号：" class="headerlink" title="查看端口进程号："></a>查看端口进程号：</h1><p>netstat -tunlp|grep 5601</p>
-<h1 id="elasticsearch学习："><a href="#elasticsearch学习：" class="headerlink" title="elasticsearch学习："></a>elasticsearch学习：</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/qdhxhz/category/1284274.html">https://www.cnblogs.com/qdhxhz/category/1284274.html</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/cn/elasticsearch/guide/current/index.html">https://www.elastic.co/guide/cn/elasticsearch/guide/current/index.html</a></p>
-<h1 id="java代码SpringBoot实现："><a href="#java代码SpringBoot实现：" class="headerlink" title="java代码SpringBoot实现："></a>java代码SpringBoot实现：</h1><p><a target="_blank" rel="noopener" href="https://github.com/suibibk/springboot-elasticsearch">https://github.com/suibibk/springboot-elasticsearch</a></p>
-<h1 id="安装环境："><a href="#安装环境：" class="headerlink" title="安装环境："></a>安装环境：</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/hadues/article/details/116018207">https://blog.csdn.net/hadues/article/details/116018207</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/he19970408/article/details/107359861/">https://blog.csdn.net/he19970408/article/details/107359861/</a></p>
-<h1 id="elasticsearch介绍："><a href="#elasticsearch介绍：" class="headerlink" title="elasticsearch介绍："></a>elasticsearch介绍：</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/tankang/p/13687738.html">https://www.cnblogs.com/tankang/p/13687738.html</a></p>
-<h1 id="守护进程启动："><a href="#守护进程启动：" class="headerlink" title="守护进程启动："></a>守护进程启动：</h1><p>.&#x2F;bin&#x2F;elasticsearch -d -p pid</p>
-<p><a target="_blank" rel="noopener" href="http://192.168.15.128:9200/">http://192.168.15.128:9200/</a></p>
-<p><a target="_blank" rel="noopener" href="http://192.168.15.129:9200/">http://192.168.15.129:9200/</a></p>
-<p><a target="_blank" rel="noopener" href="http://192.168.15.130:9200/">http://192.168.15.130:9200/</a></p>
-<p><a target="_blank" rel="noopener" href="http://192.168.15.128:9200/_cat/health">http://192.168.15.128:9200/_cat/health</a></p>
-<h1 id="kibana启动："><a href="#kibana启动：" class="headerlink" title="kibana启动："></a>kibana启动：</h1><p>.&#x2F;bin&#x2F;kibana –allow-root</p>
-<p>nohup .&#x2F;bin&#x2F;kibana –allow-root &amp;</p>
-<p><a target="_blank" rel="noopener" href="http://192.168.15.128:5601/">http://192.168.15.128:5601</a></p>
-<h1 id="filebeat："><a href="#filebeat：" class="headerlink" title="filebeat："></a>filebeat：</h1><p>.&#x2F;filebeat modules list 查看支持的模块配置列表</p>
-<p>.&#x2F;filebeat modules enable system nginx mysql</p>
-<p>.&#x2F;filebeat modules disable system nginx mysql</p>
-<h1 id="kafka后台启动："><a href="#kafka后台启动：" class="headerlink" title="kafka后台启动："></a>kafka后台启动：</h1><p>nohup .&#x2F;kafka-server-start.sh ..&#x2F;config&#x2F;server.properties 1&gt;&#x2F;dev&#x2F;null 2&gt;&amp;1 &amp;</p>
-<h1 id="zookeeper后台启动："><a href="#zookeeper后台启动：" class="headerlink" title="zookeeper后台启动："></a>zookeeper后台启动：</h1><p>nohup .&#x2F;zkServer.sh start &gt; &#x2F;dev&#x2F;null 2&gt;&amp;1 &amp;</p>
-<h1 id="logstash后台启动："><a href="#logstash后台启动：" class="headerlink" title="logstash后台启动："></a>logstash后台启动：</h1><p>nohup .&#x2F;bin&#x2F;logstash -f .&#x2F;config&#x2F;logstash-simple.conf &amp;</p>
+    <h1 id="Redis开机自启"><a href="#Redis开机自启" class="headerlink" title="Redis开机自启"></a>Redis开机自启</h1><p>[Unit]<br>Description&#x3D;redis-server<br>After&#x3D;network.target</p>
+<p>[Service]<br>Type&#x3D;forking</p>
+<p>ExecStart&#x3D;&#x2F;usr&#x2F;local&#x2F;redis&#x2F;redis-7.2.0&#x2F;bin&#x2F;redis-server &#x2F;usr&#x2F;local&#x2F;redis&#x2F;redis-7.2.0&#x2F;bin&#x2F;redis.conf<br>PrivateTmp&#x3D;true</p>
+<p>[Install]<br>WantedBy&#x3D;multi-user.target</p>
+<h1 id="Nginx开机自启"><a href="#Nginx开机自启" class="headerlink" title="Nginx开机自启"></a>Nginx开机自启</h1><p>[Unit]<br>Description&#x3D;nginx<br>After&#x3D;network.target</p>
+<p>[Service]<br>Type&#x3D;forking<br>TimeoutSec&#x3D;0<br>User&#x3D;root<br>Group&#x3D;root<br>cription&#x3D;nacos<br>After&#x3D;network.target</p>
+<p>[Service]<br>Type&#x3D;forking<br>TimeoutSec&#x3D;0<br>User&#x3D;root<br>Group&#x3D;root</p>
+<p>ExecStart&#x3D;&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin&#x2F;nginx<br>ExecReload&#x3D;&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin&#x2F;nginx -s reload<br>ExecStop&#x3D;&#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin&#x2F;nginx -s quit</p>
+<p>Restart&#x3D;on-failure<br>PrivateTmp&#x3D;true</p>
+<p>[Install]<br>WantedBy&#x3D;multi-user.target</p>
+<h1 id="Minio开机自启"><a href="#Minio开机自启" class="headerlink" title="Minio开机自启"></a>Minio开机自启</h1><p>[Unit]<br>Description&#x3D;Minio Service</p>
+<p>[Service]<br>Environment&#x3D;”MINIO_ROOT_USER&#x3D;minio”<br>Environment&#x3D;”MINIO_ROOT_PASSWORD&#x3D;minio”<br>ExecStart&#x3D;&#x2F;usr&#x2F;local&#x2F;minio&#x2F;minio server –address ‘0.0.0.0:9000’ –console-address ‘0.0.0.0:9002’ &#x2F;usr&#x2F;local&#x2F;minio&#x2F;data<br>ExecReload&#x3D;&#x2F;bin&#x2F;kill -s HUP $MAINPID<br>ExecStop&#x3D;&#x2F;bin&#x2F;kill -s QUIT $MAINPID<br>StandardOutput&#x3D;&#x2F;usr&#x2F;local&#x2F;minio&#x2F;minio.log<br>PrivateTmp&#x3D;true</p>
+<p>[Install]<br>WantedBy&#x3D;multi-user.target</p>
+<h1 id="重新加载服务的配置文件"><a href="#重新加载服务的配置文件" class="headerlink" title="重新加载服务的配置文件"></a>重新加载服务的配置文件</h1><p>systemctl daemon-reload</p>
+<h1 id="设置开机启动"><a href="#设置开机启动" class="headerlink" title="设置开机启动"></a>设置开机启动</h1><p>systemctl enable nginx.service</p>
+<h1 id="启动nginx服务"><a href="#启动nginx服务" class="headerlink" title="启动nginx服务"></a>启动nginx服务</h1><p>systemctl start nginx</p>
+<h1 id="查看服务状态"><a href="#查看服务状态" class="headerlink" title="查看服务状态"></a>查看服务状态</h1><p>systemctl status nginx</p>
 
     
 
@@ -334,7 +328,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://example.com/2023/09/20/ElasticSearch检索/" title="ElasticSearch检索" target="_blank">http://example.com/2023/09/20/ElasticSearch检索/</a>
+          <a href="http://example.com/2023/09/20/redis、nginx、minio开机自启/" title="redis、nginx、minio开机自启" target="_blank">http://example.com/2023/09/20/redis、nginx、minio开机自启/</a>
         </li>
         
         <li>
@@ -412,7 +406,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/09/20/ElasticSearch%E6%A3%80%E7%B4%A2/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/09/20/redis%E3%80%81nginx%E3%80%81minio%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -427,18 +421,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2023/09/20/redis%E3%80%81nginx%E3%80%81minio%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          redis、nginx、minio开机自启
-        
-      </div>
-    </a>
   
-  
-    <a href="/2023/09/20/%E7%80%9A%E9%AB%98%E6%95%B0%E6%8D%AE%E5%BA%93/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">瀚高数据库</div>
+    <a href="/2023/09/20/ElasticSearch%E6%A3%80%E7%B4%A2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ElasticSearch检索</div>
       <i class="icon-circle-right"></i>
     </a>
   
