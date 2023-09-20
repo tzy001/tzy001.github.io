@@ -214,6 +214,95 @@
             
 
   
+    <article id="post-Linux配置服务启动" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/09/19/Linux%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8/" target="_blank">Linux配置服务启动</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/09/19/Linux%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8/" class="archive-article-date">
+        <time datetime="2023-09-19T09:50:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-19</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="Zookeeper启动命令"><a href="#Zookeeper启动命令" class="headerlink" title="Zookeeper启动命令"></a>Zookeeper启动命令</h1><h2 id="启动命令"><a href="#启动命令" class="headerlink" title="启动命令"></a>启动命令</h2><p>&#x2F;opt&#x2F;zookeeper-3.4.14&#x2F;bin&#x2F;zkServer.sh start</p>
+<h2 id="查看状态"><a href="#查看状态" class="headerlink" title="查看状态"></a>查看状态</h2><p>&#x2F;opt&#x2F;zookeeper-3.4.14&#x2F;bin&#x2F;zkServer.sh status</p>
+<h1 id="Kafka启动命令"><a href="#Kafka启动命令" class="headerlink" title="Kafka启动命令"></a>Kafka启动命令</h1><p>#到bin目录下执行<br>#后台启动加参数-daemon<br>.&#x2F;kafka-server-start.sh -daemon ..&#x2F;config&#x2F;server.properties</p>
+<h1 id="Minio启动命令"><a href="#Minio启动命令" class="headerlink" title="Minio启动命令"></a>Minio启动命令</h1><p>export MINIO_ACCESS_KEY&#x3D;minio<br>export MINIO_SECRET_KEY&#x3D;hdxMnoAdmin<br>nohup &#x2F;usr&#x2F;local&#x2F;minio&#x2F;minio server –address 0.0.0.0:9000 –console-address 0.0.0.0:9002 &#x2F;usr&#x2F;local&#x2F;minio&#x2F;data &gt; &#x2F;usr&#x2F;local&#x2F;minio&#x2F;minio.log 2&gt;&amp;1 &amp;</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">tzy001</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/09/19/Linux%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -428,6 +517,10 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">tzy001</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
