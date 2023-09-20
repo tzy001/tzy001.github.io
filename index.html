@@ -243,14 +243,14 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="导出数据库"><a href="#导出数据库" class="headerlink" title="导出数据库"></a>导出数据库</h1><p>pg_dump -h 127.0.0.1 -U mdtj mdtj &gt;&#x2F;usr&#x2F;local&#x2F;data202.sql</p>
-<h1 id="导入数据库"><a href="#导入数据库" class="headerlink" title="导入数据库"></a>导入数据库</h1><p>psql -U mdtj mdtj &lt;&#x2F;usr&#x2F;local&#x2F;data.sql</p>
-<h1 id="导出表"><a href="#导出表" class="headerlink" title="导出表"></a>导出表</h1><p>pg_dump -h 127.0.0.1 -U mdtj mdtj -t demo_event_info &gt;&#x2F;usr&#x2F;local&#x2F;event.sql</p>
-<h1 id="导入表"><a href="#导入表" class="headerlink" title="导入表"></a>导入表</h1><p>psql -U mdtj -d mdtj &lt;&#x2F;usr&#x2F;local&#x2F;event.sql</p>
+    <h1 id="导出数据库"><a href="#导出数据库" class="headerlink" title="导出数据库"></a>导出数据库</h1><p>pg_dump -h 127.0.0.1 -U test test &gt;&#x2F;usr&#x2F;local&#x2F;data202.sql</p>
+<h1 id="导入数据库"><a href="#导入数据库" class="headerlink" title="导入数据库"></a>导入数据库</h1><p>psql -U test test &lt;&#x2F;usr&#x2F;local&#x2F;data.sql</p>
+<h1 id="导出表"><a href="#导出表" class="headerlink" title="导出表"></a>导出表</h1><p>pg_dump -h 127.0.0.1 -U test test -t demo_event_info &gt;&#x2F;usr&#x2F;local&#x2F;event.sql</p>
+<h1 id="导入表"><a href="#导入表" class="headerlink" title="导入表"></a>导入表</h1><p>psql -U test -d test &lt;&#x2F;usr&#x2F;local&#x2F;event.sql</p>
 <h1 id="查看日志目录"><a href="#查看日志目录" class="headerlink" title="查看日志目录"></a>查看日志目录</h1><p>&#x2F;opt&#x2F;highgo&#x2F;hgdb-see-4.5.8&#x2F;data&#x2F;hgdb_log</p>
 <h1 id="环境变量生效"><a href="#环境变量生效" class="headerlink" title="环境变量生效"></a>环境变量生效</h1><p>source &#x2F;opt&#x2F;highgo&#x2F;hgdb-see-4.5.8&#x2F;etc&#x2F;hgdbenv.sample</p>
-<h1 id="sysdba用户使用psql登陆数据库"><a href="#sysdba用户使用psql登陆数据库" class="headerlink" title="sysdba用户使用psql登陆数据库"></a>sysdba用户使用psql登陆数据库</h1><p>psql -U sysdba -d mdtj</p>
-<h1 id="用户授权为超级用户"><a href="#用户授权为超级用户" class="headerlink" title="用户授权为超级用户"></a>用户授权为超级用户</h1><p>①ALTER ROLE mdtj WITH SUPERUSER;<br>②GRANT ALL PRIVILEGES ON DATABASE mdtj TO mdtj;</p>
+<h1 id="sysdba用户使用psql登陆数据库"><a href="#sysdba用户使用psql登陆数据库" class="headerlink" title="sysdba用户使用psql登陆数据库"></a>sysdba用户使用psql登陆数据库</h1><p>psql -U sysdba -d test</p>
+<h1 id="用户授权为超级用户"><a href="#用户授权为超级用户" class="headerlink" title="用户授权为超级用户"></a>用户授权为超级用户</h1><p>①ALTER ROLE test WITH SUPERUSER;<br>②GRANT ALL PRIVILEGES ON DATABASE test TO test;</p>
 <h1 id="重启命令：pg-ctl-restart"><a href="#重启命令：pg-ctl-restart" class="headerlink" title="重启命令：pg_ctl restart"></a>重启命令：pg_ctl restart</h1><h1 id="启动命令：pg-ctl-start"><a href="#启动命令：pg-ctl-start" class="headerlink" title="启动命令：pg_ctl start"></a>启动命令：pg_ctl start</h1><h1 id="关闭命令：pg-ctl-stop"><a href="#关闭命令：pg-ctl-stop" class="headerlink" title="关闭命令：pg_ctl stop"></a>关闭命令：pg_ctl stop</h1>
     
 
