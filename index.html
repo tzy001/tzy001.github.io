@@ -214,6 +214,114 @@
             
 
   
+    <article id="post-ElasticSearch检索" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/09/20/ElasticSearch%E6%A3%80%E7%B4%A2/" target="_blank">ElasticSearch检索</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/09/20/ElasticSearch%E6%A3%80%E7%B4%A2/" class="archive-article-date">
+        <time datetime="2023-09-20T03:20:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-09-20</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="关闭防火墙："><a href="#关闭防火墙：" class="headerlink" title="关闭防火墙："></a>关闭防火墙：</h1><p>systemctl stop firewalld.service</p>
+<h1 id="永久关闭防火墙："><a href="#永久关闭防火墙：" class="headerlink" title="永久关闭防火墙："></a>永久关闭防火墙：</h1><p>systemctl disable firewalld.service</p>
+<h1 id="查看端口进程号："><a href="#查看端口进程号：" class="headerlink" title="查看端口进程号："></a>查看端口进程号：</h1><p>netstat -tunlp|grep 5601</p>
+<h1 id="elasticsearch学习："><a href="#elasticsearch学习：" class="headerlink" title="elasticsearch学习："></a>elasticsearch学习：</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/qdhxhz/category/1284274.html">https://www.cnblogs.com/qdhxhz/category/1284274.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.elastic.co/guide/cn/elasticsearch/guide/current/index.html">https://www.elastic.co/guide/cn/elasticsearch/guide/current/index.html</a></p>
+<h1 id="java代码SpringBoot实现："><a href="#java代码SpringBoot实现：" class="headerlink" title="java代码SpringBoot实现："></a>java代码SpringBoot实现：</h1><p><a target="_blank" rel="noopener" href="https://github.com/suibibk/springboot-elasticsearch">https://github.com/suibibk/springboot-elasticsearch</a></p>
+<h1 id="安装环境："><a href="#安装环境：" class="headerlink" title="安装环境："></a>安装环境：</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/hadues/article/details/116018207">https://blog.csdn.net/hadues/article/details/116018207</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/he19970408/article/details/107359861/">https://blog.csdn.net/he19970408/article/details/107359861/</a></p>
+<h1 id="elasticsearch介绍："><a href="#elasticsearch介绍：" class="headerlink" title="elasticsearch介绍："></a>elasticsearch介绍：</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/tankang/p/13687738.html">https://www.cnblogs.com/tankang/p/13687738.html</a></p>
+<h1 id="守护进程启动："><a href="#守护进程启动：" class="headerlink" title="守护进程启动："></a>守护进程启动：</h1><p>.&#x2F;bin&#x2F;elasticsearch -d -p pid</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.15.128:9200/">http://192.168.15.128:9200/</a></p>
+<p><a target="_blank" rel="noopener" href="http://192.168.15.129:9200/">http://192.168.15.129:9200/</a></p>
+<p><a target="_blank" rel="noopener" href="http://192.168.15.130:9200/">http://192.168.15.130:9200/</a></p>
+<p><a target="_blank" rel="noopener" href="http://192.168.15.128:9200/_cat/health">http://192.168.15.128:9200/_cat/health</a></p>
+<h1 id="kibana启动："><a href="#kibana启动：" class="headerlink" title="kibana启动："></a>kibana启动：</h1><p>.&#x2F;bin&#x2F;kibana –allow-root</p>
+<p>nohup .&#x2F;bin&#x2F;kibana –allow-root &amp;</p>
+<p><a target="_blank" rel="noopener" href="http://192.168.15.128:5601/">http://192.168.15.128:5601</a></p>
+<h1 id="filebeat："><a href="#filebeat：" class="headerlink" title="filebeat："></a>filebeat：</h1><p>.&#x2F;filebeat modules list 查看支持的模块配置列表</p>
+<p>.&#x2F;filebeat modules enable system nginx mysql</p>
+<p>.&#x2F;filebeat modules disable system nginx mysql</p>
+<h1 id="kafka后台启动："><a href="#kafka后台启动：" class="headerlink" title="kafka后台启动："></a>kafka后台启动：</h1><p>nohup .&#x2F;kafka-server-start.sh ..&#x2F;config&#x2F;server.properties 1&gt;&#x2F;dev&#x2F;null 2&gt;&amp;1 &amp;</p>
+<h1 id="zookeeper后台启动："><a href="#zookeeper后台启动：" class="headerlink" title="zookeeper后台启动："></a>zookeeper后台启动：</h1><p>nohup .&#x2F;zkServer.sh start &gt; &#x2F;dev&#x2F;null 2&gt;&amp;1 &amp;</p>
+<h1 id="logstash后台启动："><a href="#logstash后台启动：" class="headerlink" title="logstash后台启动："></a>logstash后台启动：</h1><p>nohup .&#x2F;bin&#x2F;logstash -f .&#x2F;config&#x2F;logstash-simple.conf &amp;</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">tzy001</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/09/20/ElasticSearch%E6%A3%80%E7%B4%A2/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-瀚高数据库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
